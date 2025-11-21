@@ -11,6 +11,8 @@ https://docs.djangoproject.com/en/5.2/ref/settings/
 """
 
 from pathlib import Path
+import dj_database_url
+import os
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -96,8 +98,8 @@ else:
         'default': {
             'ENGINE': 'django.db.backends.postgresql',
             'NAME': 'spass',
-            'USER': 'admin',  # Changed from 'postgres' to 'admin' (your DB owner)
-            'PASSWORD': '',   # No password needed for local
+            'USER': 'admin',  
+            'PASSWORD': '',   
             'HOST': 'localhost',
             'PORT': '5432',
         }
