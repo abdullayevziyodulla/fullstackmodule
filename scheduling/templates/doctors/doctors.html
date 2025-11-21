@@ -1,0 +1,41 @@
+{% extends "base.html" %}
+{% block title %}Doctors{% endblock %}
+{% block content %}
+  <div class="d-flex justify-content-between align-items-center">
+      <h1>Doctors</h1>
+      <a href="{% url 'create_doctor' %}" class="btn btn-success">+ Add Doctor</a>
+  </div>
+
+    <div class='card'>
+        <div class="card-body">
+            <div class="table-responsive">
+                <table class="table table-striped align-middle">
+                    <thead>
+                        <tr>
+                            <th>Name</th>
+                            <th>Specialty</th>
+                            <th>Email</th>
+                            <th>Phone number</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for doctor in doctors %}
+                        <tr>
+                            <td>{{ doctor.name }}</td>
+                            <td>{{ doctor.specialization }}</td>
+                            <td>{{ doctor.email }}</td>
+                            <td>{{ doctor.phone_number }}</td>
+                            <td>
+                            <a class="btn btn-outline-primary" href="{% url 'update_doctor' doctor.id %}" >Edit</a>
+                            <a class="btn btn-outline-danger" href="{% url 'delete_doctor' doctor.id %}" >Delete</a>
+                            </td>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+{% endblock %}
