@@ -78,10 +78,6 @@ WSGI_APPLICATION = 'spass.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/5.2/ref/settings/#databases
 
-
-import dj_database_url
-import os
-
 # Use environment variable for production, fallback to local for development
 DATABASE_URL = os.getenv('DATABASE_URL')
 
